@@ -78,7 +78,7 @@ public class Main {
         map[r1][c1] = map[r2][c2];
         map[r2][c2] = temp;
     }
-    public static int findMaxRow(char[][] map) { // targetColor 변수를 이용해 연속성을 판단하는 
+    public static int findMaxRow(char[][] map) { // targetColor 변수를 이용해 연속성을 판단하는 방법 
         int N = map.length;
         int maxRow = 0;
         for(int r=0; r<N; r++) {
