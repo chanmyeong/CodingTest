@@ -47,6 +47,14 @@ public class Main {
         char[][] map = new char[N][N];
         for(int i=0; i<N; i++)
             map[i] = sc.next().toCharArray(); // char[][] 배열에 한번에 넣기
+        
+        // BufferedReader 사용 시 char로 넣을 때
+//        for (int i = 0; i < N; i++) {
+//            String input = br.readLine();
+//            for (int j = 0; j < N; j++) {
+//                map[i][j] = input.charAt(j);
+//            }
+//        }
 
         int ans = 0;
         for(int i=0; i<N; i++)
