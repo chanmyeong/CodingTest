@@ -1,3 +1,4 @@
+// O[(candidateCount*14)^2]
 import java.io.*;
 import java.util.*;
 
