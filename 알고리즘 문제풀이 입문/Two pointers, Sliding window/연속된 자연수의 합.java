@@ -47,3 +47,23 @@ public class Main {
         System.out.println(answer);
     }
 }
+====================================================================================================
+// 수학적 풀이2
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int answer = 0;
+        int cnt = 1;
+        n--;
+        while(n>0) {
+            cnt++;
+            n-=cnt;
+            if(n%cnt==0) answer++;
+        }
+        System.out.println(answer);
+    }
+}
