@@ -50,7 +50,7 @@ public class Main {
 
         for(int i=0; i<n; i++) {
             arr[i] = sc.nextInt();
-            sort[i]=arr[i];
+            sort[i]=arr[i]; // int[] sort = arr.clone();
         }
         Arrays.sort(sort);
 
