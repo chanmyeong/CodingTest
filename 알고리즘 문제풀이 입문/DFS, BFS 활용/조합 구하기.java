@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 public class Main {
     static StringBuilder sb = new StringBuilder();
-    static int[] pick, ch;
+    static int[] pick;
     static int n,m;
     public void DFS(int L, int s) {
         if(L==m) {
