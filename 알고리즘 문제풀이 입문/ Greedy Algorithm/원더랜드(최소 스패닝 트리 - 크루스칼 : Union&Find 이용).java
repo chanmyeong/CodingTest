@@ -40,7 +40,7 @@ public class Main {
             int c = sc.nextInt();
             arr.add(new Edge(a, b, c));
         }
-        Collections.sort(arr);
+        Collections.sort(arr); // 최소비용 기준으로 오름차순 정렬
         for(Edge ob : arr) {
             int fv1 = Find(ob.v1);
             int fv2 = Find(ob.v2);
