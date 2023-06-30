@@ -45,3 +45,53 @@ public class Main {
         }
     }
 }
+====================================================================================================
+
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static int[][] Rotation(int[][] arr) { // 함수 하나로 90,180,270 모두 처리
+        int[][] result = new int[arr.length][arr.length];
+
+        for(int i=0; i<arr.length; i++) {
+            for(int j=0; j<arr.length; j++) {
+                result[i][j] = arr[arr.length-j-1][i];
+            }
+        }
+        return result;
+    }
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        int cnt=1;
+        while(t-->0) {
+            int n = sc.nextInt();
+            int[][] arr = new int[n][n];
+            for(int i=0; i<n; i++)
+                for(int j=0; j<n; j++)
+                    arr[i][j] = sc.nextInt();
+
+            int[][] result_90 = Rotation(arr);
+            int[][] result_180 = Rotation(result_90);
+            int[][] result_270 = Rotation(result_180);
+
+            System.out.println("#"+cnt);
+            // 배열출력
+            for(int i=0; i<n; i++) {
+                for(int j=0; j<n; j++) {
+                    System.out.print(result_90[i][j]);
+                }
+                System.out.print(" ");
+                for(int j=0; j<n; j++) {
+                    System.out.print(result_180[i][j]);
+                }
+                System.out.print(" ");
+                for(int j=0; j<n; j++) {
+                    System.out.print(result_270[i][j]);
+                }
+                System.out.println();
+            }
+            cnt++;
+        }
+    }
+}
