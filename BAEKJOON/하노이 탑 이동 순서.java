@@ -29,3 +29,36 @@ public class Main {
         System.out.println(sb);
     }
 }
+====================================================================================================
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    static StringBuilder sb = new StringBuilder();
+    private static void recursive(int n, int start, int end) { // 시작 목적
+        if(n==1) {
+            sb.append(start+" "+end+"\n");
+            return;
+        }
+        
+        int tmp=0;
+        for(int i=1; i<=3; i++) {
+            if(i != start && i!=end) { // 임시기둥은 나머지 하나(바뀔 수 있음)
+                tmp = i;
+                break;
+            }
+        }
+
+        recursive(n-1, start, tmp);
+        sb.append(start+" "+end+"\n"); // n번 원판 1개를 목적기둥으로 이동하는 것은 바로 출력과 같음
+        recursive(n-1, tmp, end);
+    }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+
+        sb.append((int) (Math.pow(2, n) - 1)).append('\n');
+        recursive(n,1,3);
+        System.out.println(sb);
+    }
+}
