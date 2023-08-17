@@ -126,7 +126,7 @@ public class Main {
             while(dir<4) {
                 int nr = r+dr[dir];
                 int nc = c+dc[dir];
-                if(nr >= ltr+k && nr <= rbr-k && nc >= ltc+k && nc <= rbc-k) {
+                if(nr >= ltr+k && nr <= rbr-k && nc >= ltc+k && nc <= rbc-k) { // 회전테두리가 감소함에 따라 경계값도 같이 줄어듬
                     tempArr[r][c]=tempArr[nr][nc]; // 시계 방향으로 덮어쓰기
                     r=nr;
                     c=nc;
@@ -246,7 +246,7 @@ public class Main {
             while(dir<4) {
                 int nr = r+dr[dir];
                 int nc = c+dc[dir];
-                if(cR-k <= nr && nr <= cR+k && cC-k <= nc  && nc <= cC+k) {
+                if(cR-k <= nr && nr <= cR+k && cC-k <= nc  && nc <= cC+k) { // 회전 테두리가 증가함에 따라 경계값도 같이 커져감
                     tempArr[r][c]=tempArr[nr][nc]; // 시계 방향으로 덮어쓰기
                     r=nr;
                     c=nc;
