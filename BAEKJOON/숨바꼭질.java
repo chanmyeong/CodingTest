@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Queue;
 
-public class Main_BJ_1697_숨바꼭질_우찬명 {
+public class Main {
 	/**
 	 * 수빈이 N(0 ≤ N ≤ 100,000), 동생은 점 K(0 ≤ K ≤ 100,000)
 	 * 수빈이는 걷거나 순간이동 가능
