@@ -159,7 +159,7 @@ public class BOJ_2477_참외밭 {
 			
 		}
     
-    // 최대 길이에서의 앞과 뒤 비교 시, 시작과 끝 비교가 애매한 부분을 초기화를 통해서 해결
+                // 최대 길이에서의 앞과 뒤 비교 시, 시작과 끝 비교가 애매한 부분을 초기화를 통해서 해결
 		int nextR1=input[5],nextC1=input[5]; // nextR1,R2 => 세로길이 후보 
 		int nextR2=input[0],nextC2=input[0]; // nextC1,C2 => 가로길이 후보
     
