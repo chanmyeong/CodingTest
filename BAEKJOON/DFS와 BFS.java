@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     static int n, m, v;
     static int[][] graph;
-    static boolean[] check; // 거의 필수
+    static boolean[] check; // 트리가 아닌 그래프 탐색에서 간선이 여러개 존재하기 때문에 방문관리가 필요
     public static void DFS(int node) {
         check[node] = true;
         System.out.print(node+" ");
