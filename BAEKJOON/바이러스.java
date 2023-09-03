@@ -12,7 +12,7 @@ import java.io.*;
  * 방문 배열 필요(그래프), BFS가 DFS보다 빠르다
  * 1번이 누구와도 연결 안되어있으면 0이 답
  */
-// BFS
+// BFS 인접(연결)리스트
 public class Main {
     static int N, M, cnt=0;
     static class Node {
@@ -74,6 +74,67 @@ public class Main {
 
     }
 }
+====================================================================================================
+// BFS 인접행렬
+// 1번 정점이 아무것도 연결되어있지 않을 때의 예외파악보다
+// 그래프 탐색 이후 방문배열을 탐색하는 것이 시간복잡도가 빠르다
+import java.util.*;
+import java.io.*;
+public class Main {
+    static int N, M, cnt=0;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine()); // 컴퓨터 수
+        M = Integer.parseInt(br.readLine()); // 연결 간선 수
+
+        int[][] adjMatrix = new int[N+1][N+1]; // 1부터 시작
+        boolean[] visited = new boolean[N+1];
+
+        for(int i=1; i<=M; i++) {
+            String[] line = br.readLine().split(" ");
+            int from = Integer.parseInt(line[0]);
+            int to = Integer.parseInt(line[1]);
+            adjMatrix[from][to] = 1;
+            adjMatrix[to][from] = 1;
+        }
+//        System.out.println(Arrays.deepToString(adjMatrix));
+
+        BFS(adjMatrix, visited);
+        for(int i=1;i<=N;i++){ // BFS 탐색 후 방문한 정점들 개수 세기
+            if(visited[i]) {
+                cnt++;
+            }
+        }
+        System.out.println(cnt-1); // 1번 정점 제외
+
+    }
+    private static void BFS(int[][] adjMatrix, boolean[] visited) {
+//        // 1번이 누구와도 연결되어있지 않은 경우
+//        for(int i=1; i<adjMatrix.length; i++) {
+//            if(adjMatrix[1][i]>0) break; // 연결된 것이 있으면 break 후 BFS
+//            if(i==N) {
+//                if(adjMatrix[1][N]==0) return; // 마지막까지 연결된 것이 없으면 return
+//            }
+//        }
+
+        Queue<Integer> queue = new ArrayDeque<>();
+        visited[1]=true;
+        queue.offer(1);
+
+        while(!queue.isEmpty()) {
+            int current = queue.poll();
+
+            for(int i=1; i<adjMatrix.length; i++) {
+                if(!visited[i] && adjMatrix[current][i]>0) {
+//                    cnt++;
+                    visited[i] = true;
+                    queue.offer(i);
+                }
+            }
+        }
+    }
+}    
 ====================================================================================================
 // DFS
 import java.io.*;
