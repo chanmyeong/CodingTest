@@ -61,7 +61,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class n11050 {
+public class Main {
 	static int MAX_N = 11;
 	static int N;
 	static int K;
