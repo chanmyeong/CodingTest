@@ -63,6 +63,164 @@ public class Main {
     }
 }
 ====================================================================================================
+// 2방 DFS 탐색 (우, 하)
+package study.week1;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+import javax.management.Query;
+
+public class BOJ1388_바닥장식_DFS {
+	static class Node{
+		int y,x;
+
+		public Node(int y, int x) {
+			super();
+			this.y = y;
+			this.x = x;
+		}
+
+	}
+	static int N,M,cnt;
+	static char map[][];
+	static boolean visited[][];
+	static int dy[]= {0,1};//우,하
+	static int dx[]= {1,0};
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st =  new StringTokenizer(br.readLine());
+		N=Integer.parseInt(st.nextToken());
+		M=Integer.parseInt(st.nextToken());
+		cnt=0;
+		map=new char[N][];
+		for (int i = 0; i < N; i++) {
+			map[i]=br.readLine().toCharArray();
+		}
+		visited=new boolean[N][M];
+
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				if(!visited[i][j]) {
+					cnt++;
+					int d=map[i][j]=='-'?0:1;
+					dfs(i,j,d);
+					
+				}
+			}
+		}
+		System.out.println(cnt);
+	}
+	private static void dfs(int i, int j,int go) {
+		visited[i][j]=true;
+		int ny=i+dy[go];
+		int nx=j+dx[go];
+				
+		if(!inRange(ny, nx))return;
+		if(visited[ny][nx])return;
+		if(map[i][j]!=map[ny][nx])return;
+		dfs(ny,nx,go);
+
+	}
+	private static boolean inRange(int y,int x) {
+		if(y<N && y>=0 && x>=0 && x<M)
+			return true;
+		return false;
+
+	}
+
+}
+====================================================================================================
+// 2방 BFS 탐색 (우, 하)
+package study.week1;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+import javax.management.Query;
+
+public class BOJ1388_바닥장식 {
+	static class Node{
+		int y,x;
+
+		public Node(int y, int x) {
+			super();
+			this.y = y;
+			this.x = x;
+		}
+
+	}
+	static int N,M,cnt;
+	static char map[][];
+	static boolean visited[][];
+	static int dy[]= {0,1};//우,하
+	static int dx[]= {1,0};
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st =  new StringTokenizer(br.readLine());
+		N=Integer.parseInt(st.nextToken());
+		M=Integer.parseInt(st.nextToken());
+		cnt=0;
+		map=new char[N][];
+		for (int i = 0; i < N; i++) {
+			map[i]=br.readLine().toCharArray();
+		}
+		visited=new boolean[N][M];
+
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				if(!visited[i][j]) {
+					bfs(i,j);
+					cnt++;
+				}
+			}
+		}
+		System.out.println(cnt);
+	}
+	private static void bfs(int i, int j) {
+		Queue<Node> q = new LinkedList<Node>();
+		q.offer(new Node(i,j));
+
+		while(!q.isEmpty()) {
+			Node temp=q.poll();
+			int d=map[temp.y][temp.x]=='-'?0:1;
+			int ny=temp.y+dy[d];
+			int nx=temp.x+dx[d];
+
+			if(!inRange(ny, nx))continue;
+			if(visited[ny][nx])continue;
+			if(map[i][j]!=map[ny][nx])continue;
+			visited[ny][nx]=true;
+			q.offer(new Node(ny,nx));
+		}
+		
+	}
+	private static boolean inRange(int y,int x) {
+		if(y<N && y>=0 && x>=0 && x<M)
+			return true;
+		return false;
+
+	}
+}
+====================================================================================================
 // 4방탐색
 import java.util.*;
 import java.io.*;
