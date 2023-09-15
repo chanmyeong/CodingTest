@@ -132,7 +132,7 @@ public class Main {
 		
 		int index = 0;	// 리스트에서 삭제할 요소를 참조할 인덱스 변수
 
-    // 매번 리스트를 참조하여 사이즈를 알아내는 것이 불편하다면 list.size 대신 변수 N을 써서 1씩 감소시켜도 된다. 
+    		// 매번 리스트를 참조하여 사이즈를 알아내는 것이 불편하다면 list.size 대신 변수 N을 써서 1씩 감소시켜도 된다. 
 		while(N > 1) {
 			index = (index + (K - 1)) % N; // N = list.size()
 			
