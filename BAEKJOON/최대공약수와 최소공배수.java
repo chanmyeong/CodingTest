@@ -72,3 +72,45 @@ public class Main {
 		return gcd(b, a % b);
 	}
 }  
+====================================================================================================
+import java.io.*;
+import java.util.*;
+
+/**
+ * 두 개의 자연수를 입력받아 최대 공약수와 최소 공배수를 출력하는 프로그램
+ *
+ * 문제 해결 전략 :
+ * 두 수의 약수들로 최소 공배수 제작
+ */
+public class Main {
+    static int minBoth=0,maxBoth=0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+
+        int max = Math.max(A,B);
+
+        // solve
+        for(int i=1; i<=max; i++) {
+            if(A%i==0 && B%i==0) {
+                maxBoth = Math.max(maxBoth, i);
+            }
+        }
+        // minBoth = A*B/maxBoth;
+	A : for(int j=max, k=2; j<=A*B; j=max*k, k++) {
+            for(int i=min, l=2; i<=j; i=min*l, l++) {
+                // System.out.println(i+" "+j);
+                if(i==j) {
+                    minBoth = j;
+                    break A;
+                }
+            }
+        }
+
+        System.out.println(maxBoth);
+        System.out.println(minBoth);
+
+    }
+}	
