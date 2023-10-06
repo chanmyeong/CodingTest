@@ -39,7 +39,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
-// 2점 코드
+
 /**
  * 남학생은 남학생끼리, 여학생은 여학생끼리 방을 배정해야 한다.
  * 한 방에는 같은 학년의 학생들을 배정해야 한다. 
@@ -48,7 +48,7 @@ import java.util.StringTokenizer;
  * 학생의 성별 S와 학년 Y(1 ≤ Y ≤ 6)가 공백으로 분리되어 주어진다.
  * 성별 S는 0, 1중 하나로서 여학생인 경우에 0, 남학생인 경우에 1
  */
-public class Main_BJ_13300_방배정_우찬명 {
+public class Main {
 	static int N,K; // K: 한 방에 배정할 수 있는 최대 인원 수
 	static int minRoomCnt;
 	static class Student {
