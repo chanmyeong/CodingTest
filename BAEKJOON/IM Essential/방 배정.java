@@ -115,9 +115,17 @@ public class Main_BJ_13300_방배정_우찬명 {
 			}
 		}
 //		System.out.println("cnt :"+Arrays.toString(cnt));
+		// 수정 후
 		for(int i=1; i<cnt.length; i++) {
-			roomCnt += cnt[i]/K+cnt[i]%K;
+			roomCnt += cnt[i]/K;
+			if(cnt[i]%K!=0) {
+				roomCnt++;
+			}
 		}
+		// 수정 전
+//		for(int i=1; i<cnt.length; i++) {
+//			roomCnt += cnt[i]/K+cnt[i]%K;
+//		}
 		return roomCnt;
 	}
 }
