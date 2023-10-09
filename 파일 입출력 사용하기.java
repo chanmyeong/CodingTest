@@ -4,7 +4,14 @@ import java.math.*;
  
 public class Main {
     public static void main(String[] args) throws IOException {
-    
+        File file = new File("C:\\ssafy\\workspace\\03-Algorithm\\src\\recursive\\input.txt"); // java.io.File;
+		   // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		      BufferedReader br = new BufferedReader(new FileReader(file));
+        String str = "Testcase";
+        BufferedReader br = new BufferedReader(new StringReader(str));
+        
+====================================================================================================
+     
         System.setIn(new FileInputStream("input.txt")); 
         // 이것을 사용하면 br.readLine()을 콘솔에서 받는것이 아닌 input.txt에서 받게 된다.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,5 +26,6 @@ public class Main {
                 System.out.print((i+j) + " "); // 콘솔이 아닌 output.txt에 출력해버린다.
                 System.out.println();
         }
+     
     }
 }
