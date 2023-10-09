@@ -5,8 +5,8 @@ import java.math.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         File file = new File("C:\\ssafy\\workspace\\03-Algorithm\\src\\recursive\\input.txt"); // java.io.File;
-		   // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		      BufferedReader br = new BufferedReader(new FileReader(file));
+     // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	BufferedReader br = new BufferedReader(new FileReader(file));
         String str = "Testcase";
         BufferedReader br = new BufferedReader(new StringReader(str));
         
