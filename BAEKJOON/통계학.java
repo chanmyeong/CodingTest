@@ -1,4 +1,5 @@
 // [참고문헌]: https://st-lab.tistory.com/108
+
 import java.io.*;
 import java.util.*;
 
@@ -89,6 +90,7 @@ public class Main {
         return (int)Math.round((double)sum/N);
     }
 }
+
 ====================================================================================================
 import java.io.IOException;
 
