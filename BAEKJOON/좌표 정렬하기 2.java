@@ -78,7 +78,14 @@ public class Main {
 		System.out.println(sb);
 	}
 }
-
+====================================================================================================
+        Arrays.sort(array, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[1] - o2[1];
+                // return o2[1] - o1[1];
+            }
+        });
 ====================================================================================================
 import java.io.BufferedReader;
 import java.io.IOException;
