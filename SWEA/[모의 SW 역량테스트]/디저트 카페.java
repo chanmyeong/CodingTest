@@ -103,6 +103,7 @@ public class Solution_2105_디저트카페 {
 			if(dessert[map[nr][nc]]) continue; // 같은 숫자 체크
 			visited[nr][nc] = true;
 			dessert[map[nr][nc]] = true;
+			// 조합에서 중복 조합을 하지 않기 위해 start를 넘기듯이 방향을 넘겨 사각형을 만들도록 방향의 길을 정해둠
 			dfs(cnt+1, nr, nc, sr, sc, i);
 			visited[nr][nc] = false;
 			dessert[map[nr][nc]] = false;
