@@ -1,5 +1,3 @@
-package algo_231012;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -56,10 +54,10 @@ import java.util.StringTokenizer;
  * 	=> 모든 연산자 결정이 끝났을 때
  * 	- 연산 결과가 최댓값, 최솟값인 경우 갱신
  * 
- * @author SSAFY
+ * @author minho
  *
  */
-public class Solution_4008_숫자만들기_연민호 {
+public class Solution_4008_숫자만들기 {
 	static int N;
 
 	//operators[0] : 사용가능한 (+)연산자의 갯수
