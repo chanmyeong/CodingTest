@@ -70,7 +70,7 @@ public class Solution_4014_활주로건설 {
 			else if(diff==-1) {
 				//경사로 설치
 				// 높이가 1차이나는 지점에서 낮은 지대가 길이X만큼 뻗어있는지를 확인
-				for(int j=i; j>=i-(X-1); j--) {
+				for(int j=i; j>=i-(X-1); j--) { // i에서 시작, i인 낮은 지대를 포함
 					if(j<0) return false;			 //왼쪽 경계 벗어남(설치 불가능)
 					if(visited[j]) return false;		 //이미 경사로 설치됨(설치 불가능)
 					if(map[r][i]!=map[r][j]) return false;   //경사로의 시작높이와 다름(설치 불가능)
@@ -82,7 +82,7 @@ public class Solution_4014_활주로건설 {
 			//c. 오른쪽이 1 낮은 경우
 			else if(diff==1) {
 				//경사로 설치
-				for(int j=i+1; j<=i+X; j++) {
+				for(int j=i+1; j<=i+X; j++) { // i+1에서 시작, i+1+(X-1)
 					if(j>=N) return false;			 //오른쪽 경계 벗어남(설치 불가능)
 					if(visited[j]) return false;		 //이미 경사로 설치됨(설치 불가능)
 					if(map[r][i+1]!=map[r][j]) return false; //경사로의 시작높이와 다름(설치 불가능)
